@@ -9,5 +9,9 @@ namespace EmployeeManagement.Interface
     public interface IExportPdfFile
     {
         void ExportPdfReport();
+
+        void Test() { 
+            Console.WriteLine("Test default implementation of interface");
+        }
     }
 }
