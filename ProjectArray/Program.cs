@@ -26,7 +26,7 @@ int soThuHai = Convert.ToInt32(Console.ReadLine());
 if (soThuNhat < arr.Length && soThuHai < arr.Length)
 {
 
-    temp = arr[soThuNhat];
+    temp = arr[soThuNhat]; 
     arr[soThuNhat] = arr[soThuHai];
     arr[soThuHai] = temp;
     Console.Write("Cac phan tu sau khi sap xep:");

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectOOP", "ProjectOOP\Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectArray", "ProjectArray\ProjectArray.csproj", "{F1E1D335-2537-4A05-AB09-0F4C022DF2EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectLINQ", "ProjectLINQ\ProjectLINQ.csproj", "{C2030354-4CC4-4897-8F49-DB3E5B252837}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F1E1D335-2537-4A05-AB09-0F4C022DF2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1E1D335-2537-4A05-AB09-0F4C022DF2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1E1D335-2537-4A05-AB09-0F4C022DF2EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2030354-4CC4-4897-8F49-DB3E5B252837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2030354-4CC4-4897-8F49-DB3E5B252837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2030354-4CC4-4897-8F49-DB3E5B252837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2030354-4CC4-4897-8F49-DB3E5B252837}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
