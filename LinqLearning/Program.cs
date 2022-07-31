@@ -157,6 +157,10 @@ foreach (var em in employeeListPage2)
     Console.WriteLine(em.Name);
 }
 
+//IEnumerable làm việc trên Memory (RAM) 
+//Iqueryable làm việc với query trên database
+//Iqueryable vs IEnumerable
+
 
 
 Console.ReadLine();

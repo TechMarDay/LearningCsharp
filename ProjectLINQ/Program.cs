@@ -53,7 +53,7 @@ namespace ProjectLINQ
                 City = "NYC"
 
             };
-            lstStudent.Add(student1);
+            lstStudent.Add(student1); //studentList or students
             lstStudent.Add(student2);
             lstStudent.Add(student3);
             lstStudent.Add(student4);
@@ -61,7 +61,7 @@ namespace ProjectLINQ
             //1.Lấy ra học sinh có id = 4
             Console.WriteLine("1.Lấy ra học sinh có id = 4");
             var student = lstStudent.SingleOrDefault(m => m.StudentID == 4);
-            Console.WriteLine(student.StudentName + "," + student.Mark + "," + student.City);
+            Console.WriteLine(student?.StudentName + "," + student?.Mark + "," + student?.City);
             Console.WriteLine("=============================================");
             //2. Lấy ra danh sách học sinh có tên chứa ‘am’ và sống ở thành phố ‘CA’
             Console.WriteLine("2. Lấy ra danh sách học sinh có tên chứa ‘am’ và sống ở thành phố ‘CA’");
@@ -73,6 +73,8 @@ namespace ProjectLINQ
             Console.WriteLine("=============================================");
             //3. Lấy ra tên học sinh có điểm cao nhất
             Console.WriteLine("3. Lấy ra tên học sinh có điểm cao nhất");
+            //highestMarkStudent => camel case lạc đà 
+            //Rule variable, const => kibap A_B
             var MarkStudent = lstStudent.SingleOrDefault(m => m.Mark == lstStudent.Max(m => m.Mark));
             Console.WriteLine(MarkStudent.StudentName);
 
