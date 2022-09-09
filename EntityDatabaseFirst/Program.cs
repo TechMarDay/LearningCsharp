@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using EntityDatabaseFirst;
 using EntityDatabaseFirst.Function;
 using EntityDatabaseFirst.Models;
 using System.Text;
@@ -17,6 +18,7 @@ Console.WriteLine("Viết function lấy bài viết theo Id. Bên ngoài gọi 
 Console.WriteLine("Mời nhập id");
 int idPost = Convert.ToInt32(Console.ReadLine());
 var posts1 = new GetData();
+
 if (posts1.GetIdPost(idPost).Count == 0)
 {
     Console.WriteLine("Rỗng");
@@ -27,7 +29,9 @@ else
     {
         Console.WriteLine($"{item.Title}-{item.Content}");
     }
-}    
+}
+
+
    
 
 Console.ReadLine();
