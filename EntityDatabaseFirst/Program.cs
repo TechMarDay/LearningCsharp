@@ -1,37 +1,39 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using BenchmarkDotNet.Running;
 using EntityDatabaseFirst;
 using EntityDatabaseFirst.Function;
-using EntityDatabaseFirst.Models;
 using System.Text;
 
 Console.OutputEncoding = Encoding.UTF8;
-//[US-03]Viết function lấy danh sách toàn bộ bài viết. Bên ngoài gọi function và sử dụng foreach để in Name của bài post ra màn hình.
-var dbcontext = new BlogContext();
-var posts = new GetData();
 
-foreach (var item in posts.GetAllPost())
+#region Entity Framework Data first
+/*
+//[US-03]Viết function lấy danh sách toàn bộ bài viết. Bên ngoài gọi function và sử dụng foreach để in Name của bài post ra màn hình.
+var postService = new PostService();
+
+foreach (var item in postService.GetAllPost())
 {
     Console.WriteLine(item.Title);
 }
+
 //Viết function lấy bài viết theo Id. Bên ngoài gọi function này và in Name + description ra màn hình.
 Console.WriteLine("Viết function lấy bài viết theo Id. Bên ngoài gọi function này và in Name + description ra màn hình.");
 Console.WriteLine("Mời nhập id");
-int idPost = Convert.ToInt32(Console.ReadLine());
-var posts1 = new GetData();
+int postId = Convert.ToInt32(Console.ReadLine());
+var post = postService.GetPostById(postId);
 
-if (posts1.GetIdPost(idPost).Count == 0)
-{
-    Console.WriteLine("Rỗng");
-}
+if (post == null) 
+    Console.WriteLine($"Không tìm thấy bài post với Id = {postId}");
 else
-{
-    foreach (var item in posts1.GetIdPost(idPost))
-    {
-        Console.WriteLine($"{item.Title}-{item.Content}");
-    }
-}
+    Console.WriteLine($"{post?.Title}-{post?.Content}");
+*/
+#endregion
 
+//var adoConnectService = new AdoService(); //Ado.net
+//adoConnectService.Run();
 
-   
+//var postService = new PostService(); //Entity framrework core
+//postService.Run();
+
+var summary = BenchmarkRunner.Run(typeof(BenchMarkService));
 
 Console.ReadLine();

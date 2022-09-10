@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace EntityDatabaseFirst.Models
+namespace EntityDatabaseFirst.EntityModels
 {
-    public partial class BlogContext : DbContext
+    public partial class BlogDbContext : DbContext
     {
-        public BlogContext()
+        public BlogDbContext()
         {
         }
 
-        public BlogContext(DbContextOptions<BlogContext> options)
+        public BlogDbContext(DbContextOptions<BlogDbContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<TblCategory> TblCategories { get; set; } = null!;
-        public virtual DbSet<TblPost> TblPosts { get; set; } = null!;
-        public virtual DbSet<TblUser> TblUsers { get; set; } = null!;
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,58 +31,54 @@ namespace EntityDatabaseFirst.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<TblCategory>(entity =>
+            modelBuilder.Entity<Category>(entity =>
             {
-                entity.ToTable("tbl_Category");
-
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.ToTable("Category");
 
                 entity.Property(e => e.Content).HasColumnType("text");
 
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(((10)/(9))/(2022))");
+
+                entity.Property(e => e.CreateUserId).HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.Title).HasMaxLength(500);
 
-                entity.HasOne(d => d.IdNavigation)
-                    .WithOne(p => p.TblCategory)
-                    .HasForeignKey<TblCategory>(d => d.Id)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_tbl_Category_tbl_Post");
+                entity.Property(e => e.UpdateDate).HasColumnType("datetime");
             });
 
-            modelBuilder.Entity<TblPost>(entity =>
+            modelBuilder.Entity<Post>(entity =>
             {
-                entity.ToTable("tbl_Post");
+                entity.ToTable("Post");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                //Id tự tăng
+                //entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Content).HasColumnType("text");
 
-                entity.Property(e => e.CreatTime).HasColumnType("datetime");
-
-                entity.Property(e => e.IdCategory).HasColumnName("idCategory");
-
-                entity.Property(e => e.IdUser).HasColumnName("idUser");
+                entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Title).HasMaxLength(500);
 
-                entity.Property(e => e.UpdateTime).HasColumnType("datetime");
+                entity.Property(e => e.UpdateDate).HasColumnType("datetime");
 
-                entity.HasOne(d => d.IdUserNavigation)
-                    .WithMany(p => p.TblPosts)
-                    .HasForeignKey(d => d.IdUser)
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Posts)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Post_Category");
+
+                entity.HasOne(d => d.CreateUser)
+                    .WithMany(p => p.Posts)
+                    .HasForeignKey(d => d.CreateUserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_tbl_Post_tbl_User");
             });
 
-            modelBuilder.Entity<TblUser>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
-                entity.ToTable("tbl_User");
-
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.ToTable("User");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(50)
@@ -90,7 +86,7 @@ namespace EntityDatabaseFirst.Models
 
                 entity.Property(e => e.Name).HasMaxLength(250);
 
-                entity.Property(e => e.Pass)
+                entity.Property(e => e.Password)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
