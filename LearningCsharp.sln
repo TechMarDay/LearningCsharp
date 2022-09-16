@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDBFirst", "EFCoreDBFi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDBFirstExcercise", "EFCoreDBFirstExcercise\EFCoreDBFirstExcercise.csproj", "{2B340194-D0B2-40EC-801D-2B8CD64E51F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCodeFirst", "EntityFrameworkCodeFirst\EntityFrameworkCodeFirst.csproj", "{0CB00312-357D-4F20-862B-E1946E7CAF8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCodeFirst", "EntityFrameworkCodeFirst\EntityFrameworkCodeFirst.csproj", "{0CB00312-357D-4F20-862B-E1946E7CAF8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreCodeFirst", "EntityFrameworkCoreCodeFirst\EntityFrameworkCoreCodeFirst.csproj", "{4A77B66E-E9C0-4B22-85DE-632045B2CC9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{0CB00312-357D-4F20-862B-E1946E7CAF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CB00312-357D-4F20-862B-E1946E7CAF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB00312-357D-4F20-862B-E1946E7CAF8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A77B66E-E9C0-4B22-85DE-632045B2CC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A77B66E-E9C0-4B22-85DE-632045B2CC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A77B66E-E9C0-4B22-85DE-632045B2CC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A77B66E-E9C0-4B22-85DE-632045B2CC9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
