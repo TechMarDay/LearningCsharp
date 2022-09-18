@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplicationNET6.Pages.Categories.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Category.Id" />
+            <div class="form-group">
+                <label asp-for="Category.Title" class="control-label"></label>
+                <input asp-for="Category.Title" class="form-control" />
+                <span asp-validation-for="Category.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.Content" class="control-label"></label>
+                <input asp-for="Category.Content" class="form-control" />
+                <span asp-validation-for="Category.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.CreateUserId" class="control-label"></label>
+                <input asp-for="Category.CreateUserId" class="form-control" />
+                <span asp-validation-for="Category.CreateUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.CreateDate" class="control-label"></label>
+                <input asp-for="Category.CreateDate" class="form-control" />
+                <span asp-validation-for="Category.CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.UpdateUserId" class="control-label"></label>
+                <input asp-for="Category.UpdateUserId" class="form-control" />
+                <span asp-validation-for="Category.UpdateUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.UpdateDate" class="control-label"></label>
+                <input asp-for="Category.UpdateDate" class="form-control" />
+                <span asp-validation-for="Category.UpdateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
