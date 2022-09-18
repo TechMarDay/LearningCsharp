@@ -16,7 +16,7 @@ namespace EntityFrameworkCoreCodeFirst.Models
         {
 
             optionsBuilder
-                .UseLazyLoadingProxies()
+                
                 .UseSqlServer("Data Source=SVS-N-MP223FRX;Initial Catalog=BlogCodeFirst;User ID=sa;Password=S@to0310;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }    
     }

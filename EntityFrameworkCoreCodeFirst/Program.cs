@@ -41,5 +41,40 @@ foreach (var item in resultCategoryPostEagerLoading)
     }
 }
 
+// [US-11] Viết function Add, Update, Delete Category
+//  function Add
+Console.WriteLine("==========================================================================");
+Console.WriteLine("[US-11] Viết function Add, Update, Delete Category");
+Console.Write("Nhập Id:");
+int Id = Convert.ToInt32(Console.ReadLine());
+Console.Write("Nhập Title:");
+string title =Console.ReadLine() +"\n";
+Console.Write("Nhập Content:");
+string content = Console.ReadLine() + "\n";
+Console.Write("Nhập CreateUserId:");
+int createUserId =Convert.ToInt32(Console.ReadLine()) ;
+
+Console.Write("Nhập CreateDate:");
+DateTime createDate = Convert.ToDateTime(Console.ReadLine());
+
+Console.Write("Nhập UpdateDate:");
+DateTime updateDate = Convert.ToDateTime(Console.ReadLine());
+
+
+Console.Write("Nhập UpdateUserId:");
+int updateUserId = Convert.ToInt32(Console.ReadLine());
+FunctionCUDCategory functionCUD = new FunctionCUDCategory();
+
+Console.WriteLine("function Add");
+//functionCUD.AddCategory(title,content,createUserId,createDate,updateDate,updateUserId);
+
+Console.WriteLine("==========================================================================");
+Console.WriteLine("function Update");
+//functionCUD.UpdateCategory(Id,title,content,createUserId,createDate,updateDate,updateUserId);
+
+
+Console.WriteLine("==========================================================================");
+Console.WriteLine("function Delete");
+functionCUD.DeleteCategory(Id);
 
 Console.ReadLine();

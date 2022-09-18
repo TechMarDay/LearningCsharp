@@ -11,7 +11,7 @@ namespace EntityFrameworkCoreCodeFirst
     public class FuncitonGetData
     {
         
-
+         
         public List<Category> GetListCategory()
         {
             BlogDbContext db = new BlogDbContext();
