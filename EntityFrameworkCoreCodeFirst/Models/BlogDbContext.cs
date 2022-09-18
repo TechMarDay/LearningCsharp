@@ -17,7 +17,14 @@ namespace EntityFrameworkCoreCodeFirst.Models
 
             optionsBuilder
                 
-                .UseSqlServer("Data Source=SVS-N-MP223FRX;Initial Catalog=BlogCodeFirst;User ID=sa;Password=S@to0310;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        }    
+                .UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=BlogCodeFirst;User ID=sa;Password=Asdf@123456;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //foregin key
+        }
     }
 }

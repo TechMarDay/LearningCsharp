@@ -23,7 +23,6 @@ namespace EntityFrameworkCoreCodeFirst.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        [MaxLength(500)]  
         public string Content { get; set; }
         
         public DateTime? CreateDate { get; set; }       

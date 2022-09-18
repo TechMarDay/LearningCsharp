@@ -19,7 +19,6 @@ namespace EntityFrameworkCoreCodeFirst.Models
         [MaxLength(500)]
         public string Title { get; set; }
 
-        [MaxLength(500)]
         public string? Content { get; set; }
         [Required]
         public int CreateUserId { get; set; }
