@@ -1,0 +1,71 @@
+﻿@page
+@model WebApplicationNET6.Pages.CategoryAndUser.CreateModel
+@{
+}
+<h1>Create</h1>
+
+<h4>Category</h4>
+<hr />
+<form class="form" method="post">
+    <ng-form method="post">   
+            <div class="form-group">
+                <label asp-for="Category.Title" class="control-label"></label>
+                <input asp-for="Category.Title" class="form-control" />
+                <span asp-validation-for="Category.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.Content" class="control-label"></label>
+                <input asp-for="Category.Content" class="form-control" />
+                <span asp-validation-for="Category.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.CreateUserId" class="control-label"></label>
+                <input asp-for="Category.CreateUserId" class="form-control" />
+                <span asp-validation-for="Category.CreateUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group" class="col-md-4" >
+                <label asp-for="Category.CreateDate" class="control-label"></label>
+                <input asp-for="Category.CreateDate" class="form-control" />
+                <span asp-validation-for="Category.CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="Category.UpdateUserId" class="control-label"></label>
+                <input asp-for="Category.UpdateUserId" class="form-control" />
+                <span asp-validation-for="Category.UpdateUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category.UpdateDate" class="control-label"></label>
+                <input asp-for="Category.UpdateDate" class="form-control" />
+                <span asp-validation-for="Category.UpdateDate" class="text-danger"></span>
+            </div>
+           
+            <input type="submit" value="Create Category" class="btn btn-primary"asp-page-handler="CreateCategory"/>
+</ng-form>
+<ng-form>  
+            <div class="form-group">
+                <label asp-for="User.Name" class="control-label"></label>
+                <input asp-for="User.Name" class="form-control" />
+                <span asp-validation-for="User.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Phone" class="control-label"></label>
+                <input asp-for="User.Phone" class="form-control" />
+                <span asp-validation-for="User.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Email" class="control-label"></label>
+                <input asp-for="User.Email" class="form-control" />
+                <span asp-validation-for="User.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.Password" class="control-label"></label>
+                <input asp-for="User.Password" class="form-control" />
+                <span asp-validation-for="User.Password" class="text-danger"></span>
+            </div>
+
+            <input type="submit" value="Create User" class="btn btn-primary" asp-page-handler="CreateUser"/>
+        </ng-form>
+   
+</form>
+
+

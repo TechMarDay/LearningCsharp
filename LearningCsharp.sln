@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCodeFirst", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityDatabaseFirst", "EntityDatabaseFirst\EntityDatabaseFirst.csproj", "{7B933216-7DCA-4FEE-A33F-9805AE3534BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationNET6", "WebApplicationNET6\WebApplicationNET6.csproj", "{D50ED09E-9376-4FD3-9904-133A32662DCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationNET6", "WebApplicationNET6\WebApplicationNET6.csproj", "{D50ED09E-9376-4FD3-9904-133A32662DCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,7 +9,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<BlogDBContext>(options =>
 
-    options.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=BlogCodeFirst;User ID=sa;Password=Asdf@123456;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+    options.UseSqlServer("Data Source=SVS-N-MP223FRX;Initial Catalog=Blog;User ID=sa;Password=S@to0310;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
 
 var app = builder.Build();
 

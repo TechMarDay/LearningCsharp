@@ -15,5 +15,7 @@ namespace WebApplicationNET6.Data
         }
 
         public DbSet<WebApplicationNET6.Model.Category> Category { get; set; } = default!;
+        public DbSet<WebApplicationNET6.Model.User> User { get; set; } = default!;
+        
     }
 }
