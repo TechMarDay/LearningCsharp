@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   Layout = "_Layout_Blog";
+}
+
+<h1>Hello default page</h1>
+
+<h3>@ViewData["Message"]</h3>
+
+<ul>
+    @for(var i = 0; i < (int)ViewData["Numbers"]; i++)
+    {
+        <li>Welcome Long @i</li>
+    }
+</ul>

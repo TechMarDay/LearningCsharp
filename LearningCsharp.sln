@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityDatabaseFirst", "Enti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationNET6", "WebApplicationNET6\WebApplicationNET6.csproj", "{D50ED09E-9376-4FD3-9904-133A32662DCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationMVC", "WebApplicationMVC\WebApplicationMVC.csproj", "{638A56AF-6C96-47ED-B752-6AC0390C6C04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{D50ED09E-9376-4FD3-9904-133A32662DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D50ED09E-9376-4FD3-9904-133A32662DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D50ED09E-9376-4FD3-9904-133A32662DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{638A56AF-6C96-47ED-B752-6AC0390C6C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{638A56AF-6C96-47ED-B752-6AC0390C6C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{638A56AF-6C96-47ED-B752-6AC0390C6C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{638A56AF-6C96-47ED-B752-6AC0390C6C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

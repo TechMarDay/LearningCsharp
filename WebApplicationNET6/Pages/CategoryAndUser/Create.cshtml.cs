@@ -25,22 +25,28 @@ namespace WebApplicationNET6.Pages.CategoryAndUser
 
 
         [HttpPost]
-        public IActionResult OnPostCreateCategory()
+        public async Task<IActionResult> OnPostCreateCategoryAsync()
         {
-            if (Category == null)
+            //if (!ModelState.IsValid)
+            if (!IsValidCategoryModel())
             {
                 return Page();
             }
             else
             {
+                //Meta data
+                Category.CreateDate = DateTime.UtcNow;
+                Category.UpdateDate = DateTime.UtcNow;
+                Category.CreateUserId = 1; //Login => userId
+
                 _context.Category.Add(Category);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }
-        
+
         }
         [HttpPost]
-        public IActionResult OnPostCreateUser()
+        public async Task<IActionResult> OnPostCreateUserAsync()
         {
 
             if (User == null)
@@ -50,10 +56,19 @@ namespace WebApplicationNET6.Pages.CategoryAndUser
             else
             {
                 _context.User.Add(User);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return RedirectToPage("./IndexUser");
             }
 
+        }
+
+        private bool IsValidCategoryModel()
+        {
+            if(String.IsNullOrWhiteSpace(Category.Title))
+                return false;
+            //
+
+            return true;
         }
     }
 }
