@@ -1,4 +1,5 @@
-﻿using WebApplicationMVC.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApplicationMVC.Models;
 
 namespace WebApplicationMVC.Services
 {
@@ -18,5 +19,17 @@ namespace WebApplicationMVC.Services
         }
 
         //Model in MVC = service + model (xử lý nghiệp vụ)
+
+        public async Task<List<Category>> GetAllCategories()
+        {
+            var categories = await _context.Category.ToListAsync();
+            return categories;
+        }
+
+        protected int TestProtected()
+        {
+            var x = 1;
+            return x;
+        }
     }
 }
